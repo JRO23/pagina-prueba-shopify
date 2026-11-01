@@ -1907,7 +1907,15 @@ input {
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
-	background: rgba(20, 33, 61, 0.26);
+	background: #C0392B;
+}
+
+.pricelist__bar i:nth-child(2) {
+	background: #27AE60;
+}
+
+.pricelist__bar i:nth-child(3) {
+	background: #F39C12;
 }
 
 .pricelist__bar h3 {
