@@ -39,7 +39,9 @@ Contraste comprobado sobre `--color-fondo`: texto 15,1:1, `--color-texto-suave` 
 
 **`--color-acento-texto` no sirve para texto pequeño.** Da 3,5:1 sobre el fondo y 3,2:1 sobre la sección. Solo va en numerales, estrellas, íconos y texto grande. Las etiquetas y los precios van en `--color-primario`.
 
-**`--color-detalle` no se lee sobre fondo claro.** Da 1,5:1 sobre el fondo. Ahí va `--color-detalle-texto`, que da 3,6:1 y solo sirve en texto grande.
+**`--color-detalle` no se lee sobre fondo claro.** Da 1,5:1 sobre el fondo. Ahí va `--color-detalle-texto`, que da 3,6:1 y solo sirve en texto grande. Como marcador, detrás de `--color-tinta`, sí se usa el amarillo real.
+
+**Marcador de la frase del Inicio:** verde, amarillo y naranja llevan `--color-tinta`; el rojo lleva blanco, que da 4,7:1.
 
 ## Tipografía
 
@@ -99,7 +101,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 ## Movimiento
 
 - Rotación del titular cada 3,2s con fundido de la imagen de fondo.
-- Texto declarativo que se ilumina con el scroll: cada oración se enciende con un color de la pirámide del logo, en orden verde, amarillo, naranja y rojo.
+- Texto declarativo que se ilumina con el scroll: la oración activa se resalta como con marcador, con un color de la pirámide del logo (verde, amarillo, naranja y rojo, en ese orden), y al pasar conserva su color como texto.
 - Carruseles continuos que se pausan con el puntero o el foco.
 - Entradas al hacer scroll: 24px de desplazamiento y 0,6s, una sola vez.
 - Con `prefers-reduced-motion` todo queda quieto y el contenido se ve completo.

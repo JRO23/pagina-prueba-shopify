@@ -817,39 +817,58 @@ input {
 .statement__text {
 	max-width: 21em;
 	font-size: var(--fs-d2);
-	font-weight: 330;
-	line-height: 1.1;
+	font-weight: 500;
+	line-height: 1.28;
 	letter-spacing: -0.02em;
 }
 
-.js .statement__text span {
-	color: rgba(20, 33, 61, 0.28);
-	transition: color 0.4s ease;
-}
-
-.js .statement__text span[data-state="past"] {
-	color: rgba(20, 33, 61, 0.5);
-}
-
-/* Cada oración se enciende con un color de la pirámide del logo, de arriba abajo. */
+/* Cada oración lleva un color de la pirámide del logo, de arriba abajo:
+   --luz para el texto sobre el fondo, --luz-fondo y --luz-tinta para el marcador. */
 .statement__text span:nth-child(1) {
 	--luz: var(--color-exito);
+	--luz-fondo: var(--color-exito);
+	--luz-tinta: var(--color-tinta);
 }
 
 .statement__text span:nth-child(2) {
 	--luz: var(--color-detalle-texto);
+	--luz-fondo: var(--color-detalle);
+	--luz-tinta: var(--color-tinta);
 }
 
 .statement__text span:nth-child(3) {
 	--luz: var(--color-acento-texto);
+	--luz-fondo: var(--color-acento);
+	--luz-tinta: var(--color-tinta);
 }
 
 .statement__text span:nth-child(4) {
 	--luz: var(--color-oferta);
+	--luz-fondo: var(--color-oferta);
+	--luz-tinta: var(--color-blanco);
+}
+
+.js .statement__text {
+	margin-inline: -0.16em;
+}
+
+.js .statement__text span {
+	padding-inline: 0.16em;
+	border-radius: 0.14em;
+	color: rgba(20, 33, 61, 0.28);
+	background: linear-gradient(var(--luz-fondo), var(--luz-fondo)) no-repeat 0 0 / 0 100%;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	transition: color 0.3s ease, background-size 0.45s var(--ease);
+}
+
+.js .statement__text span[data-state="past"] {
+	color: var(--luz);
 }
 
 .js .statement__text span[data-state="on"] {
-	color: var(--luz);
+	color: var(--luz-tinta);
+	background-size: 100% 100%;
 }
 
 /* Carrusel continuo ------------------------------------------------------- */
