@@ -1,6 +1,6 @@
 # Design Promo · Sistema de diseño de la página de prueba
 
-**Dirección:** el lenguaje de shopify.com/co (hojas apiladas, titulares enormes y livianos, mucho aire, producto en primer plano) con la identidad de Design Promo: fondos crema, azul como color de acción y naranja como acento.
+**Dirección:** el lenguaje de shopify.com/co (hojas apiladas, titulares enormes y livianos, aire medido, producto en primer plano) con la identidad de Design Promo: fondos crema, azul como color de acción y naranja como acento.
 
 Referencia medida en el navegador: shopify.com/co a 1440px. Se toma la estructura, el ritmo y las interacciones. No se copian textos, imágenes, logos ni marcas de Shopify.
 
@@ -64,7 +64,7 @@ Texto corrido: máximo 65 caracteres por línea.
 
 Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 
-- Sección: 128px en escritorio, 80px en móvil.
+- Sección: 64px en escritorio, 40px en móvil. Se redujo a la mitad para que la página no se vea vacía.
 - Margen lateral: `clamp(16px, 6vw, 88px)`.
 - Ancho de contenido: 1264px como máximo.
 
