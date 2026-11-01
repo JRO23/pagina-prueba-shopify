@@ -2002,77 +2002,60 @@ input {
 	color: var(--color-texto-suave);
 }
 
+/* Dos videos verticales del taller, escalonados como reels. */
 .maker__art {
-	position: relative;
-	min-height: 480px;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: clamp(12px, 2vw, 24px);
+	align-items: start;
+	justify-self: center;
+	width: 100%;
+	max-width: 600px;
 }
 
-.maker__machine {
-	position: absolute;
-	top: 14%;
-	left: 8%;
-	width: 84%;
-	aspect-ratio: 4 / 3;
-	padding: 16px;
+.maker__video {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 9 / 16;
 	border-radius: var(--radius-m);
-	background: var(--color-blanco);
-	box-shadow: var(--shadow);
-	object-fit: contain;
-}
-
-/* El sello tiene fondo blanco: se presenta como una calcomanía. */
-.maker__seal {
-	position: absolute;
-	right: 0;
-	bottom: 6%;
-	z-index: 2;
-	width: 34%;
-	border-radius: 16px;
-	box-shadow: var(--shadow);
-	transform: rotate(-4deg);
-}
-
-.float {
-	position: absolute;
-	z-index: 1;
-	width: 17%;
-	aspect-ratio: 1;
-	border-radius: 16px;
-	background: var(--color-blanco);
 	box-shadow: var(--shadow);
 	object-fit: cover;
-	animation: float 6s ease-in-out infinite alternate;
 }
 
-.float--1 {
-	top: 2%;
-	left: 0;
+.maker__video:nth-child(2) {
+	margin-top: clamp(32px, 5vw, 64px);
 }
 
-.float--2 {
-	top: 0;
-	right: 6%;
-	animation-delay: -2s;
+/* Con el scroll, cada video se mueve un poco en sentido contrario al otro. */
+@supports (animation-timeline: view()) {
+	@media (prefers-reduced-motion: no-preference) {
+		.maker__video {
+			animation: maker-sube linear both;
+			animation-timeline: view();
+		}
+
+		.maker__video:nth-child(2) {
+			animation-name: maker-baja;
+		}
+	}
 }
 
-.float--3 {
-	bottom: 12%;
-	left: -2%;
-	animation-delay: -4s;
-}
-
-.float--4 {
-	bottom: 0;
-	left: 34%;
-	animation-delay: -1s;
-}
-
-@keyframes float {
+@keyframes maker-sube {
 	from {
-		transform: translateY(-8px);
+		translate: 0 24px;
 	}
 	to {
-		transform: translateY(8px);
+		translate: 0 -24px;
+	}
+}
+
+@keyframes maker-baja {
+	from {
+		translate: 0 -24px;
+	}
+	to {
+		translate: 0 24px;
 	}
 }
 
@@ -2501,10 +2484,6 @@ input {
 	}
 
 	.biz__media {
-		min-height: 340px;
-	}
-
-	.maker__art {
 		min-height: 340px;
 	}
 
@@ -3058,8 +3037,7 @@ input {
 
 	.js .marquee__track,
 	.js .thumbs__row,
-	.hero__slide.is-active img,
-	.float {
+	.hero__slide.is-active img {
 		animation: none;
 	}
 

@@ -97,6 +97,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - Logo: `marca/logo-design-promo.png`, transparente, pensado para fondo oscuro. Solo va sobre azul noche: "DESIGN" y "PROMO" son blancos y se pierden sobre crema. No aplicarle filtros.
 - Sello de fabricante: tiene fondo blanco, así que va como calcomanía con radio y sombra.
 - Íconos: un solo set SVG en línea, trazo 1.8, extremos redondeados. Sin emojis.
+- Videos del taller: reales, sin controles ni sonido y en bucle. Se reproducen solos mientras se ven, con `data-autoplay`, y llevan `poster` en `assets/img/escenas`.
 
 ## Movimiento
 
@@ -104,6 +105,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - Texto declarativo que se ilumina con el scroll: la oración activa se resalta como con marcador, con un color de la pirámide del logo (verde, amarillo, naranja y rojo, en ese orden), y al pasar conserva su color como texto.
 - Carruseles continuos que se pausan con el puntero o el foco.
 - Entradas al hacer scroll: 24px de desplazamiento y 0,6s, una sola vez.
+- Parallax en los videos del fabricante: cada uno se mueve 24px en sentido contrario al otro, ligado al scroll.
 - Con `prefers-reduced-motion` todo queda quieto y el contenido se ve completo.
 
 ## Honestidad del contenido
