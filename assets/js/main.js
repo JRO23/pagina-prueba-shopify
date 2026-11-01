@@ -584,7 +584,7 @@
 				var dist = Math.hypot(p.x - origin.x, p.y - origin.y);
 				var ctrl = { x: mid.x, y: mid.y - dist * 0.32 };
 
-				ctx.strokeStyle = 'rgba(255, 105, 0, 0.5)';
+				ctx.strokeStyle = 'rgba(255, 196, 61, 0.6)';
 				ctx.lineWidth = 1.25;
 				ctx.beginPath();
 				ctx.moveTo(origin.x, origin.y);
@@ -601,7 +601,7 @@
 					ctx.fill();
 				}
 
-				ctx.fillStyle = '#ff6900';
+				ctx.fillStyle = '#ffc43d';
 				ctx.beginPath();
 				ctx.arc(p.x, p.y, 3, 0, 6.283);
 				ctx.fill();
@@ -615,7 +615,7 @@
 
 			// Bogotá, el punto de salida.
 			var pulse = time && !reduce.matches ? (time % 2000) / 2000 : 0;
-			ctx.strokeStyle = 'rgba(255, 105, 0, ' + (1 - pulse) * 0.7 + ')';
+			ctx.strokeStyle = 'rgba(255, 196, 61, ' + (1 - pulse) * 0.7 + ')';
 			ctx.lineWidth = 2;
 			ctx.beginPath();
 			ctx.arc(origin.x, origin.y, 7 + pulse * 18, 0, 6.283);

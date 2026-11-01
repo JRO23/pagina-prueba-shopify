@@ -1,10 +1,10 @@
 # Design Promo · Sistema de diseño de la página de prueba
 
-**Dirección:** el lenguaje de shopify.com/co (hojas oscuras apiladas, titulares enormes y livianos, mucho aire, producto en primer plano) con la identidad de Design Promo: azul de marca y naranja como única señal de acción.
+**Dirección:** el lenguaje de shopify.com/co (hojas apiladas, titulares enormes y livianos, mucho aire, producto en primer plano) con la identidad de Design Promo: fondos crema, azul como color de acción y naranja como acento.
 
 Referencia medida en el navegador: shopify.com/co a 1440px. Se toma la estructura, el ritmo y las interacciones. No se copian textos, imágenes, logos ni marcas de Shopify.
 
-**Solo tema oscuro**, como la referencia. No hay modo claro.
+**Solo tema claro.** No hay modo oscuro. Hay zonas oscuras puntuales: el hero, la cabecera, el pie y la hoja del fabricante.
 
 **Sitio independiente:** vive en esta carpeta y no depende de WordPress. Imágenes y tipografía son locales, y `servidor.js` lo sirve solo en este PC. No se modifica nada de designpromo.co.
 
@@ -12,27 +12,29 @@ Referencia medida en el navegador: shopify.com/co a 1440px. Se toma la estructur
 
 | Token | Valor | Rol |
 | --- | --- | --- |
-| `--ink-950` | `#05081A` | Fondo de la página, detrás de las hojas |
-| `--ink-900` | `#0A0F2C` | Hoja principal |
-| `--navy-800` | `#111A42` | Hoja azul y superficies elevadas |
-| `--navy-700` | `#1B275F` | Azul de marca: tarjetas destacadas |
-| `--navy-600` | `#2C3D8F` | Brillo de los degradados azules |
-| `--ember-900` | `#1E0F06` | Hoja cálida: tercer tono de la página |
-| `--orange` | `#FF6900` | Primario: botón principal, enlaces y cifras clave |
-| `--orange-hover` | `#FF7F26` | Hover del primario |
-| `--on-orange` | `#0A0F2C` | Texto sobre naranja |
-| `--text` | `#FFFFFF` | Títulos y texto principal |
-| `--text-2` | `#C4C9EA` | Texto secundario |
-| `--text-3` | `#8D93B8` | Notas y etiquetas |
-| `--line` | `rgba(255,255,255,.14)` | Bordes y divisores |
-| `--paper` | `#FFFFFF` | Fondo de las fichas de producto |
-| `--wa` | `#25D366` | Solo WhatsApp y confirmaciones |
-| `--warning` | `#FCB900` | Avisos, como "agotado" |
-| `--error` | `#FF8A80` | Errores de formulario |
+| `--color-fondo` | `#FAF8F4` | Fondo de la página y hojas principales |
+| `--color-seccion` | `#F1ECE2` | Hoja alterna y tarjetas destacadas |
+| `--color-borde` | `#E4DED2` | Bordes y divisores |
+| `--color-texto` | `#14213D` | Títulos y texto principal |
+| `--color-texto-suave` | `#5B6475` | Texto secundario, notas y etiquetas |
+| `--color-primario` | `#1E3FA6` | Botón principal, elementos seleccionados y hoja del fabricante |
+| `--color-primario-hover` | `#183285` | Hover del primario |
+| `--color-acento` | `#F07A1A` | Botón principal sobre zonas oscuras y detalles gráficos |
+| `--color-acento-texto` | `#D9610C` | Numerales, estrellas e íconos naranjas sobre fondo claro |
+| `--color-detalle` | `#FFC43D` | Destacados sobre zonas oscuras y avisos |
+| `--color-oferta` | `#D62828` | Reservado para ofertas y errores |
+| `--color-exito` | `#1FA34A` | WhatsApp y confirmaciones |
+| `--franja-marca` | degradado de 4 colores | Línea de 4px bajo la cabecera sólida y sobre el pie |
 
-Contraste comprobado sobre `--ink-900`: texto 19:1, `--text-2` 11,5:1, `--text-3` 6,3:1, naranja 6,5:1.
+Derivados, en `styles.css`: `--color-blanco` (fichas de producto), `--color-tinta` (el azul noche fijo, que no cambia dentro de las zonas oscuras), `--color-borde-fuerte` (campos y botones redondos), `--tinte` (hover), `--destaque` y `--btn-*`.
 
-**El botón naranja lleva texto oscuro.** Blanco sobre `#FF6900` da 2,9:1 y no cumple; `--on-orange` da 6,5:1.
+**Zonas oscuras:** `.hero`, `.site-header`, `.site-footer`, `.sheet--azul` y las caras oscuras del carnet redefinen los tokens en `styles.css`. Lo que va dentro se adapta solo: texto blanco, destaque amarillo y botón naranja.
+
+Contraste comprobado sobre `--color-fondo`: texto 15,1:1, `--color-texto-suave` 5,6:1, primario 8,6:1. Blanco sobre primario 9,1:1. Amarillo sobre primario 5,7:1.
+
+**El botón naranja lleva texto oscuro.** Blanco sobre `#F07A1A` da 2,8:1 y no cumple; `--color-tinta` da 5,7:1. Igual en verde: blanco 3,3:1, `--color-tinta` 4,9:1.
+
+**`--color-acento-texto` no sirve para texto pequeño.** Da 3,5:1 sobre el fondo y 3,2:1 sobre la sección. Solo va en numerales, estrellas, íconos y texto grande. Las etiquetas y los precios van en `--color-primario`.
 
 ## Tipografía
 
@@ -62,30 +64,30 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 ## Forma y profundidad
 
 - Radios: 12px (chips, miniaturas), 24px (tarjetas), 48px (borde superior de las hojas, 32px en móvil), píldora en botones.
-- Sombra única, solo para maquetas flotantes: `0 24px 64px rgba(0,0,0,.45)`.
+- Sombra única, solo para maquetas flotantes: `0 24px 64px rgba(20,33,61,.18)`.
 - Las hojas se montan sobre la anterior con el borde superior redondeado.
 
 ## Componentes
 
-- **Botón primario:** píldora naranja, texto `--on-orange`, 16px peso 550, 48px de alto. Hover `--orange-hover`. Desactivado al 40%.
-- **Botón secundario:** píldora transparente con borde blanco de 1px. Hover con relleno blanco al 10%.
+- **Botón primario:** píldora azul con texto blanco, 16px peso 550, 48px de alto. Hover `--color-primario-hover`. En zonas oscuras, naranja con texto `--color-tinta`. Desactivado al 40%.
+- **Botón secundario:** píldora transparente con borde de 1px del color del texto. Hover con `--tinte`.
 - **Botón discreto:** texto con subrayado.
-- **Foco:** contorno blanco de 2px con 2px de separación, en todos los elementos interactivos.
+- **Foco:** contorno de 2px del color del texto con 2px de separación, en todos los elementos interactivos.
 - **Enlaces:** subrayados dentro del texto.
-- **Navegación:** transparente sobre el hero, sólida al hacer scroll. Menús por clic, teclado y hover. En móvil, menú a pantalla completa.
-- **Chips de selección:** píldora con borde; la elegida va en blanco con texto oscuro.
-- **Campos:** fondo `--navy-800`, borde `--line`, radio 12px, etiqueta siempre visible.
-- **Tarjetas:** imagen arriba y texto debajo, sin borde; las destacadas llevan degradado azul.
-- **Ficha de producto:** fondo `--paper` con radio 24px, para las fotos sobre blanco.
-- **Pie:** logo y cuatro columnas de enlaces, con una barra legal abajo.
+- **Navegación:** transparente sobre el hero, sólida en azul noche al hacer scroll y en las páginas internas, con la franja de marca debajo. Menús por clic, teclado y hover. En móvil, menú a pantalla completa.
+- **Chips de selección:** píldora con borde; la elegida va en `--color-primario` con texto blanco.
+- **Campos:** fondo blanco, borde `--color-borde-fuerte`, radio 12px, etiqueta siempre visible.
+- **Tarjetas:** imagen arriba y texto debajo, sin borde; las destacadas van en `--color-seccion`.
+- **Ficha de producto:** fondo `--color-blanco` con radio 24px, para las fotos sobre blanco.
+- **Pie:** azul noche, con logo y cuatro columnas de enlaces, y una barra legal abajo.
 
 ## Imágenes e íconos
 
 - Solo imágenes reales de Design Promo, copiadas a `assets/img` y optimizadas en JPEG.
-- A pantalla completa: escenas de taller con velo oscuro para asegurar el contraste.
-- Producto sobre blanco: siempre dentro de una ficha `--paper`, nunca suelto sobre el fondo oscuro.
+- A pantalla completa: escenas de taller con velo azul noche para asegurar el contraste.
+- Producto sobre blanco: siempre dentro de una ficha `--color-blanco`, nunca suelto sobre el fondo crema.
 - No usar imágenes con personajes o marcas de terceros. Ya se descartaron o recortaron: apliques (Superman, Batman), mug con Cartman, busos con Bugs Bunny, botones (Coca-Cola, BMW, Burger King), portavasos (Angry Birds), llaveros (Duff, Starbucks), cintas (Facebook, L'Oréal) y gorras con KISS o The Beatles.
-- Logo: `marca/logo-design-promo.png`, transparente, pensado para fondo oscuro. No aplicarle filtros.
+- Logo: `marca/logo-design-promo.png`, transparente, pensado para fondo oscuro. Solo va sobre azul noche: "DESIGN" y "PROMO" son blancos y se pierden sobre crema. No aplicarle filtros.
 - Sello de fabricante: tiene fondo blanco, así que va como calcomanía con radio y sombra.
 - Íconos: un solo set SVG en línea, trazo 1.8, extremos redondeados. Sin emojis.
 
