@@ -23,6 +23,7 @@ const TIPOS = {
 	'.png': 'image/png',
 	'.svg': 'image/svg+xml',
 	'.woff2': 'font/woff2',
+	'.mp4': 'video/mp4',
 };
 
 function responder(res, codigo, texto) {

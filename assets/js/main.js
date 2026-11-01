@@ -326,6 +326,15 @@
 		});
 	});
 
+	/* Videos: solo corren mientras se ven ---------------------------------- */
+	$$('video[data-autoplay]').forEach(function (video) {
+		if (reduce.matches || !('IntersectionObserver' in window)) { return; }
+		new IntersectionObserver(function (entries) {
+			if (entries[0].isIntersecting) { video.play().catch(function () {}); }
+			else { video.pause(); }
+		}).observe(video);
+	});
+
 	/* Pestañas de técnicas ------------------------------------------------- */
 	$$('[data-tabs]').forEach(function (wrap) {
 		var tabs = $$('[role="tab"]', wrap);
