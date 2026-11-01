@@ -1223,33 +1223,6 @@ input {
 	white-space: nowrap;
 }
 
-.editor__prompt {
-	position: absolute;
-	right: 12px;
-	bottom: 12px;
-	left: 12px;
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	padding: 8px 12px;
-	border-radius: 12px;
-	background: var(--ink-900);
-	font-size: 14px;
-	color: var(--text);
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-}
-
-.editor__prompt img {
-	width: 36px;
-	height: auto;
-}
-
-.editor__prompt span {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
 .rings {
 	background:
 		radial-gradient(circle at 50% 50%, rgba(255, 105, 0, 0.3), transparent 42%),
