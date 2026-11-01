@@ -24,7 +24,9 @@ Referencia medida en el navegador: shopify.com/co a 1440px. Se toma la estructur
 | `--color-detalle` | `#FFC43D` | Destacados sobre zonas oscuras y avisos |
 | `--color-detalle-texto` | `#A67C00` | El amarillo de la marca sobre fondo claro, solo en texto grande |
 | `--color-oferta` | `#D62828` | Ofertas, errores y cuarta oración de la frase del Inicio |
-| `--color-exito` | `#1FA34A` | WhatsApp, confirmaciones y primera oración de la frase del Inicio |
+| `--color-exito` | `#1FA34A` | Botón flotante de WhatsApp, confirmaciones y primera oración de la frase del Inicio |
+| `--color-whatsapp` | `#32D951` | Verde del logo de WhatsApp: botón "Enviar por WhatsApp" y logo sobre fondo claro |
+| `--color-whatsapp-hover` | `#27C044` | Hover del botón de WhatsApp |
 | `--franja-marca` | degradado de 4 colores | Línea de 4px bajo la cabecera sólida y sobre el pie |
 
 Derivados, en `styles.css`: `--color-blanco` (fichas de producto), `--color-tinta` (el azul noche fijo, que no cambia dentro de las zonas oscuras), `--color-borde-fuerte` (campos y botones redondos), `--tinte` (hover), `--destaque` y `--btn-*`.
@@ -33,7 +35,7 @@ Derivados, en `styles.css`: `--color-blanco` (fichas de producto), `--color-tint
 
 Contraste comprobado sobre `--color-fondo`: texto 15,1:1, `--color-texto-suave` 5,6:1, primario 8,6:1. Blanco sobre primario 9,1:1. Amarillo sobre primario 5,7:1.
 
-**El botón naranja lleva texto oscuro.** Blanco sobre `#F07A1A` da 2,8:1 y no cumple; `--color-tinta` da 5,7:1. Igual en verde: blanco 3,3:1, `--color-tinta` 4,9:1.
+**El botón naranja lleva texto oscuro.** Blanco sobre `#F07A1A` da 2,8:1 y no cumple; `--color-tinta` da 5,7:1. Igual en verde: blanco 3,3:1, `--color-tinta` 4,9:1. Sobre `--color-whatsapp`: blanco 1,9:1, `--color-tinta` 8,6:1; el texto va en tinta y solo el logo va en blanco.
 
 **`--color-acento-texto` no sirve para texto pequeño.** Da 3,5:1 sobre el fondo y 3,2:1 sobre la sección. Solo va en numerales, estrellas, íconos y texto grande. Las etiquetas y los precios van en `--color-primario`.
 

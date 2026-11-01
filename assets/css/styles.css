@@ -27,6 +27,8 @@
 	--color-detalle-texto: #A67C00;
 	--color-oferta: #D62828;
 	--color-exito: #1FA34A;
+	--color-whatsapp: #32D951;
+	--color-whatsapp-hover: #27C044;
 	--franja-marca: linear-gradient(90deg, #1FA34A 0 25%, #FFC43D 25% 50%, #F07A1A 50% 75%, #D62828 75%);
 
 	/* Derivados de la paleta. --color-tinta conserva el azul noche dentro de .hero y demás zonas oscuras. */
@@ -276,6 +278,20 @@ input {
 
 .btn--primary:hover {
 	background: var(--btn-bg-hover);
+}
+
+/* Verde del logo de WhatsApp. Blanco sobre este verde no se lee: el texto va en tinta. */
+.btn--whatsapp {
+	background: var(--color-whatsapp);
+	color: var(--color-tinta);
+}
+
+.btn--whatsapp:hover {
+	background: var(--color-whatsapp-hover);
+}
+
+.btn--whatsapp .icon {
+	color: var(--color-blanco);
 }
 
 .btn--secondary {
@@ -1323,7 +1339,7 @@ input {
 	border-color: transparent;
 	border-radius: 22px;
 	background: var(--color-exito);
-	color: var(--color-tinta);
+	color: var(--color-blanco);
 }
 
 /* Técnicas ---------------------------------------------------------------- */
@@ -2245,6 +2261,10 @@ input {
 	transform: translateY(-2px);
 }
 
+.wa-float .icon {
+	color: var(--color-blanco);
+}
+
 /* Responsive -------------------------------------------------------------- */
 
 @media (max-width: 1280px) {
@@ -2915,6 +2935,10 @@ input {
 .contact-list .icon {
 	margin-top: 2px;
 	color: var(--color-acento-texto);
+}
+
+.contact-list .icon--wa {
+	color: var(--color-whatsapp);
 }
 
 .contact-list small {
