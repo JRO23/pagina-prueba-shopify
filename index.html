@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Design Promo | Tu marca en textiles y artículos promocionales</title>
 <meta name="description" content="Fabricantes en Bogotá de textiles, estampados, bordados, regalos publicitarios y carnets con tu marca. Envíos a toda Colombia. Cotiza por WhatsApp.">
-<!-- Página de prueba con logos y testimonios de demostración: no debe indexarse. -->
+<!-- Página de prueba con testimonios de demostración: no debe indexarse. -->
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#05081A">
 <meta property="og:title" content="Design Promo | Tu marca en textiles y artículos promocionales">
@@ -193,24 +193,6 @@
 			</div>
 		</section>
 
-		<!-- Logos ficticios: se reemplazan por los reales cuando existan. -->
-		<section class="logos wrap" aria-labelledby="logos-titulo">
-			<div class="logos__head">
-				<h2 class="logos__title" id="logos-titulo">Marcas que ya llevan su logo con nosotros</h2>
-				<p class="demo-tag">Logos ficticios de demostración</p>
-			</div>
-			<ul class="logos__list">
-				<li><svg viewBox="0 0 136 44" role="img" aria-label="Cafetal"><circle cx="20" cy="22" r="15" fill="currentColor"/><path d="M25 9c-8 7 2 19-6 26" fill="none" stroke="var(--logo-bg)" stroke-width="2.5"/><text x="42" y="30" font-size="25" font-weight="600" letter-spacing="-.6" fill="currentColor">cafetal</text></svg></li>
-				<li><svg viewBox="0 0 150 44" role="img" aria-label="Andina Logística"><path d="M2 36 16 10l8 14 6-9 12 21z" fill="currentColor"/><text x="50" y="22" font-size="16" font-weight="700" letter-spacing="2" fill="currentColor">ANDINA</text><text x="50" y="36" font-size="10.5" font-weight="500" letter-spacing="2.8" fill="currentColor">LOGÍSTICA</text></svg></li>
-				<li><svg viewBox="0 0 136 44" role="img" aria-label="Liceo Los Alisos"><path d="M20 4l15 5v12c0 10-7 15-15 19C12 36 5 31 5 21V9z" fill="currentColor"/><path d="M20 13c-5 5-5 11 0 16 5-5 5-11 0-16z" fill="var(--logo-bg)"/><text x="44" y="20" font-family="Georgia, serif" font-size="15" fill="currentColor">Liceo</text><text x="44" y="37" font-family="Georgia, serif" font-size="15" fill="currentColor">Los Alisos</text></svg></li>
-				<li><svg viewBox="0 0 136 44" role="img" aria-label="Kumbia Studio"><g fill="currentColor"><rect x="2" y="17" width="4" height="10" rx="2"/><rect x="9" y="10" width="4" height="24" rx="2"/><rect x="16" y="4" width="4" height="36" rx="2"/><rect x="23" y="12" width="4" height="20" rx="2"/><rect x="30" y="17" width="4" height="10" rx="2"/></g><text x="44" y="31" font-size="23" font-weight="800" letter-spacing="-.8" fill="currentColor">KUMBIA</text></svg></li>
-				<li><svg viewBox="0 0 150 44" role="img" aria-label="Ferronorte"><rect x="3" y="7" width="30" height="30" rx="5" fill="currentColor"/><path d="M12 29V15l12 14V15" fill="none" stroke="var(--logo-bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="41" y="30" font-size="21" font-weight="700" font-style="italic" letter-spacing="-.4" fill="currentColor">Ferronorte</text></svg></li>
-				<li><svg viewBox="0 0 136 44" role="img" aria-label="Nómada"><path d="M20 5l15 33H5z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 18v12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><text x="44" y="31" font-size="26" font-weight="300" letter-spacing="-.4" fill="currentColor">nómada</text></svg></li>
-				<li><svg viewBox="0 0 160 44" role="img" aria-label="Clínica Aurea"><path d="M14 6h12v10h10v12H26v10H14V28H4V16h10z" fill="currentColor"/><text x="46" y="29" font-size="18" font-weight="500" fill="currentColor">Clínica Aurea</text></svg></li>
-				<li><svg viewBox="0 0 186 44" role="img" aria-label="Tierra Alta"><path d="M5 30a16 16 0 0 1 32 0z" fill="currentColor"/><rect x="1" y="33" width="40" height="3" rx="1.5" fill="currentColor"/><text x="49" y="29" font-size="15.5" font-weight="600" letter-spacing="1.8" fill="currentColor">TIERRA ALTA</text></svg></li>
-			</ul>
-		</section>
-
 		<!-- Cotizador: arma el mensaje y lo deja listo para WhatsApp. -->
 		<section class="section wrap" id="cotizar" aria-labelledby="cotizar-titulo">
 			<div class="quote">
@@ -228,8 +210,9 @@
 								<label class="chip"><input type="radio" name="producto" value="chaquetas o chalecos"><span>Chaquetas</span></label>
 								<label class="chip"><input type="radio" name="producto" value="mugs" data-solo="Sublimación"><span>Mugs</span></label>
 								<label class="chip"><input type="radio" name="producto" value="carnets" data-sin-tecnica><span>Carnets</span></label>
-								<label class="chip"><input type="radio" name="producto" value="otro producto"><span>Otro</span></label>
 							</div>
+							<label class="field__label field__label--otro" for="q-otro">¿Otro producto? <span>Escríbelo aquí</span></label>
+							<input class="input" id="q-otro" name="producto_otro" type="text" autocomplete="off" maxlength="60" data-quote-otro>
 						</fieldset>
 
 						<fieldset class="field" data-quote-tecnica>
@@ -261,7 +244,7 @@
 
 						<div class="form__send">
 							<a class="btn btn--primary btn--lg" href="https://wa.me/573133955378?text=Hola%2C%20quisiera%20realizar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener" data-quote-send><svg class="icon icon--s"><use href="#i-wa"/></svg> Enviar por WhatsApp</a>
-							<p class="form__note" role="status" data-quote-status>Se abre WhatsApp con tu mensaje listo. Si tienes tu logo, adjúntalo en el chat.</p>
+							<p class="form__note" role="status" data-quote-status>Se abre WhatsApp con tu mensaje listo. Si tienes una imagen de referencia, adjúntalo en el chat.</p>
 						</div>
 					</form>
 				</div>
@@ -711,7 +694,7 @@
 				</div>
 				<div class="site-footer__legal">
 					<p>Bogotá, Colombia · Carrera 69A # 71A-11, La Estrada</p>
-					<p>© 2026 Design Promo. Sitio de prueba con logos y testimonios de demostración.</p>
+					<p>© 2026 Design Promo. Sitio de prueba con testimonios de demostración.</p>
 					<ul class="site-footer__social">
 						<li><a href="https://www.instagram.com/designpromo/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a></li>
 						<li><a href="https://www.facebook.com/empresadesignpromo" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a></li>

@@ -908,44 +908,6 @@ input {
 	color: var(--ink-900);
 }
 
-/* Logos ------------------------------------------------------------------- */
-
-.logos {
-	--logo-bg: var(--ink-900);
-	padding-block: clamp(56px, 7vw, 96px) 0;
-}
-
-.logos__head {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	gap: 12px 24px;
-	margin-bottom: 32px;
-}
-
-.logos__title {
-	font-size: var(--fs-lg);
-	font-weight: 450;
-	color: var(--text-2);
-}
-
-.logos__list {
-	display: grid;
-	grid-template-columns: repeat(8, minmax(0, 1fr));
-	gap: 24px 32px;
-	align-items: center;
-	color: var(--text-2);
-}
-
-.logos__list svg {
-	display: block;
-	width: 100%;
-	max-width: 132px;
-	height: auto;
-	margin-inline: auto;
-}
-
 /* Cotizador --------------------------------------------------------------- */
 
 .quote {
@@ -995,6 +957,10 @@ input {
 .field__label span {
 	font-weight: 400;
 	color: var(--text-2);
+}
+
+.field__label--otro {
+	margin-top: 16px;
 }
 
 .chips {
@@ -2274,10 +2240,6 @@ input {
 }
 
 @media (max-width: 1024px) {
-	.logos__list {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
-	}
-
 	/* Menú a pantalla completa */
 	.menu-toggle {
 		display: grid;
@@ -2519,10 +2481,6 @@ input {
 
 	.logo img {
 		height: 42px;
-	}
-
-	.logos__list {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
 	.quotes__head {

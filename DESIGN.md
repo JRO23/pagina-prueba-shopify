@@ -99,7 +99,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 
 ## Honestidad del contenido
 
-- Los logos y testimonios del Inicio son ficticios, pedidos para ver cómo quedaría la página. Llevan el rótulo `.demo-tag` y el sitio tiene `noindex`.
+- Los testimonios del Inicio son ficticios, pedidos para ver cómo quedaría la página. Llevan el rótulo `.demo-tag` y el sitio tiene `noindex`.
 - Antes de publicar el sitio hay que cambiarlos por reales o quitarlos.
 - Sin cifras ni premios inventados: las cifras salen del sitio actual.
 - Precios solo los publicados en octubre de 2026, con nota para confirmarlos.

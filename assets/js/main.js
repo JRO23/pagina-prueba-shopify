@@ -221,7 +221,7 @@
 	});
 
 	/* Entradas al hacer scroll --------------------------------------------- */
-	var reveals = $$('.section__head, .quote, .flex-cards, .tech, .audience, .biz, .quotes, .prices, .maker, .ship, .steps, .logos__list');
+	var reveals = $$('.section__head, .quote, .flex-cards, .tech, .audience, .biz, .quotes, .prices, .maker, .ship, .steps');
 
 	if ('IntersectionObserver' in window && !reduce.matches) {
 		var revealObserver = new IntersectionObserver(function (entries) {
@@ -246,6 +246,8 @@
 		var status = $('[data-quote-status]', form);
 		var techField = $('[data-quote-tecnica]', form);
 		var techInputs = $$('input[name="tecnica"]', form);
+		var prodInputs = $$('input[name="producto"]', form);
+		var otro = $('[data-quote-otro]', form);
 		var initialNote = status.textContent;
 
 		function pick(name) {
@@ -255,8 +257,8 @@
 
 		function syncTecnicas() {
 			var prod = $('input[name="producto"]:checked', form);
-			var solo = prod.getAttribute('data-solo');
-			techField.hidden = prod.hasAttribute('data-sin-tecnica');
+			var solo = prod && prod.getAttribute('data-solo');
+			techField.hidden = !!prod && prod.hasAttribute('data-sin-tecnica');
 			techInputs.forEach(function (input) {
 				input.disabled = !!solo && input.value !== '' && input.value !== solo;
 				if (input.disabled && input.checked) { techInputs[0].checked = true; }
@@ -267,7 +269,7 @@
 			var nombre = form.elements.nombre.value.trim();
 			var cantidad = pick('cantidad').toLowerCase();
 			var tecnica = pick('tecnica');
-			var msg = 'Hola, quisiera cotizar ' + pick('producto') + '.';
+			var msg = 'Hola, quisiera cotizar ' + (pick('producto') || otro.value.trim()) + '.';
 
 			msg += ' Serían ' + (cantidad.indexOf('o más') > -1 ? cantidad : 'de ' + cantidad) + ' unidades';
 			if (techField.hidden) {
@@ -289,6 +291,15 @@
 			status.textContent = initialNote;
 			status.classList.remove('is-sent');
 		}
+
+		/* Escribir un producto desmarca las opciones; elegir una borra lo escrito. */
+		otro.addEventListener('input', function () {
+			var escrito = otro.value.trim() !== '';
+			prodInputs.forEach(function (input, i) { input.checked = !escrito && i === 0; });
+		});
+		prodInputs.forEach(function (input) {
+			input.addEventListener('change', function () { otro.value = ''; });
+		});
 
 		form.addEventListener('input', update);
 		form.addEventListener('change', update);
