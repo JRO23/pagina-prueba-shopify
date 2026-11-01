@@ -24,6 +24,7 @@
 	--color-acento: #F07A1A;
 	--color-acento-texto: #D9610C;
 	--color-detalle: #FFC43D;
+	--color-detalle-texto: #A67C00;
 	--color-oferta: #D62828;
 	--color-exito: #1FA34A;
 	--franja-marca: linear-gradient(90deg, #1FA34A 0 25%, #FFC43D 25% 50%, #F07A1A 50% 75%, #D62828 75%);
@@ -814,8 +815,25 @@ input {
 	color: rgba(20, 33, 61, 0.5);
 }
 
+/* Cada oración se enciende con un color de la pirámide del logo, de arriba abajo. */
+.statement__text span:nth-child(1) {
+	--luz: var(--color-exito);
+}
+
+.statement__text span:nth-child(2) {
+	--luz: var(--color-detalle-texto);
+}
+
+.statement__text span:nth-child(3) {
+	--luz: var(--color-acento-texto);
+}
+
+.statement__text span:nth-child(4) {
+	--luz: var(--color-oferta);
+}
+
 .js .statement__text span[data-state="on"] {
-	color: var(--color-texto);
+	color: var(--luz);
 }
 
 /* Carrusel continuo ------------------------------------------------------- */
@@ -3015,6 +3033,6 @@ input {
 	}
 
 	.js .statement__text span {
-		color: var(--color-texto);
+		color: var(--luz);
 	}
 }

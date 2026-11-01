@@ -22,8 +22,9 @@ Referencia medida en el navegador: shopify.com/co a 1440px. Se toma la estructur
 | `--color-acento` | `#F07A1A` | Botón principal sobre zonas oscuras y detalles gráficos |
 | `--color-acento-texto` | `#D9610C` | Numerales, estrellas e íconos naranjas sobre fondo claro |
 | `--color-detalle` | `#FFC43D` | Destacados sobre zonas oscuras y avisos |
-| `--color-oferta` | `#D62828` | Reservado para ofertas y errores |
-| `--color-exito` | `#1FA34A` | WhatsApp y confirmaciones |
+| `--color-detalle-texto` | `#A67C00` | El amarillo de la marca sobre fondo claro, solo en texto grande |
+| `--color-oferta` | `#D62828` | Ofertas, errores y cuarta oración de la frase del Inicio |
+| `--color-exito` | `#1FA34A` | WhatsApp, confirmaciones y primera oración de la frase del Inicio |
 | `--franja-marca` | degradado de 4 colores | Línea de 4px bajo la cabecera sólida y sobre el pie |
 
 Derivados, en `styles.css`: `--color-blanco` (fichas de producto), `--color-tinta` (el azul noche fijo, que no cambia dentro de las zonas oscuras), `--color-borde-fuerte` (campos y botones redondos), `--tinte` (hover), `--destaque` y `--btn-*`.
@@ -35,6 +36,8 @@ Contraste comprobado sobre `--color-fondo`: texto 15,1:1, `--color-texto-suave` 
 **El botón naranja lleva texto oscuro.** Blanco sobre `#F07A1A` da 2,8:1 y no cumple; `--color-tinta` da 5,7:1. Igual en verde: blanco 3,3:1, `--color-tinta` 4,9:1.
 
 **`--color-acento-texto` no sirve para texto pequeño.** Da 3,5:1 sobre el fondo y 3,2:1 sobre la sección. Solo va en numerales, estrellas, íconos y texto grande. Las etiquetas y los precios van en `--color-primario`.
+
+**`--color-detalle` no se lee sobre fondo claro.** Da 1,5:1 sobre el fondo. Ahí va `--color-detalle-texto`, que da 3,6:1 y solo sirve en texto grande.
 
 ## Tipografía
 
@@ -94,7 +97,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 ## Movimiento
 
 - Rotación del titular cada 3,2s con fundido de la imagen de fondo.
-- Texto declarativo que se ilumina con el scroll.
+- Texto declarativo que se ilumina con el scroll: cada oración se enciende con un color de la pirámide del logo, en orden verde, amarillo, naranja y rojo.
 - Carruseles continuos que se pausan con el puntero o el foco.
 - Entradas al hacer scroll: 24px de desplazamiento y 0,6s, una sola vez.
 - Con `prefers-reduced-motion` todo queda quieto y el contenido se ve completo.
