@@ -17,7 +17,7 @@ Referencia medida en el navegador: shopify.com/co a 1440px. Se toma la estructur
 | `--color-borde` | `#E4DED2` | Bordes y divisores |
 | `--color-texto` | `#14213D` | Títulos y texto principal |
 | `--color-texto-suave` | `#5B6475` | Texto secundario, notas y etiquetas |
-| `--color-primario` | `#1E3FA6` | Botón principal, elementos seleccionados y hoja del fabricante |
+| `--color-primario` | `#1E3FA6` | Botón principal y elementos seleccionados |
 | `--color-primario-hover` | `#183285` | Hover del primario |
 | `--color-acento` | `#F07A1A` | Botón principal sobre zonas oscuras y detalles gráficos |
 | `--color-acento-texto` | `#D9610C` | Numerales, estrellas e íconos naranjas sobre fondo claro |
@@ -29,7 +29,7 @@ Referencia medida en el navegador: shopify.com/co a 1440px. Se toma la estructur
 | `--color-whatsapp-hover` | `#27C044` | Hover del botón de WhatsApp |
 | `--franja-marca` | degradado de 4 colores | Línea de 4px bajo la cabecera sólida y sobre el pie |
 
-Derivados, en `styles.css`: `--color-blanco` (fichas de producto), `--color-tinta` (el azul noche fijo, que no cambia dentro de las zonas oscuras), `--color-borde-fuerte` (campos y botones redondos), `--tinte` (hover), `--destaque` y `--btn-*`.
+Derivados, en `styles.css`: `--color-blanco` (fichas de producto), `--color-tinta` (el azul noche fijo, que no cambia dentro de las zonas oscuras; es el fondo de la hoja del fabricante), `--color-borde-fuerte` (campos y botones redondos), `--tinte` (hover), `--destaque` y `--btn-*`.
 
 **Zonas oscuras:** `.hero`, `.site-header`, `.site-footer`, `.sheet--azul` y las caras oscuras del carnet redefinen los tokens en `styles.css`. Lo que va dentro se adapta solo: texto blanco, destaque amarillo y botón naranja.
 
