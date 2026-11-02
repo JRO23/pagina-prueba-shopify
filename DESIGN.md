@@ -33,6 +33,8 @@ Derivados, en `styles.css`: `--color-blanco` (fichas de producto), `--color-tint
 
 **Zonas oscuras:** `.hero`, `.site-header`, `.site-footer`, `.sheet--azul` y las caras oscuras del carnet redefinen los tokens en `styles.css`. Lo que va dentro se adapta solo: texto blanco, destaque amarillo y botón naranja.
 
+**Fondo de la hoja del fabricante:** `--color-tinta` con resplandores de `--color-primario`, un toque de `--color-acento` y encima tejido diagonal y grano, para que el azul no se vea plano.
+
 Contraste comprobado sobre `--color-fondo`: texto 15,1:1, `--color-texto-suave` 5,6:1, primario 8,6:1. Blanco sobre primario 9,1:1. Amarillo sobre primario 5,7:1.
 
 **El botón naranja lleva texto oscuro.** Blanco sobre `#F07A1A` da 2,8:1 y no cumple; `--color-tinta` da 5,7:1. Igual en verde: blanco 3,3:1, `--color-tinta` 4,9:1. Sobre `--color-whatsapp`: blanco 1,9:1, `--color-tinta` 8,6:1; el texto va en tinta y solo el logo va en blanco.
