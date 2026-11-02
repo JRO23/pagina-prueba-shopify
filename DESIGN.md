@@ -128,7 +128,7 @@ Fuentes: contorno de [Natural Earth](https://www.naturalearthdata.com/) (dominio
 
 ## Honestidad del contenido
 
-- Los testimonios del Inicio son ficticios, pedidos para ver cómo quedaría la página. Llevan el rótulo `.demo-tag` y el sitio tiene `noindex`.
+- Los testimonios del Inicio son ficticios, pedidos para ver cómo quedaría la página. No llevan rótulo en la sección: el aviso queda en el pie de página y el sitio tiene `noindex`.
 - Antes de publicar el sitio hay que cambiarlos por reales o quitarlos.
 - Sin cifras ni premios inventados: las cifras salen del sitio actual.
 - Precios solo los publicados en octubre de 2026, con nota para confirmarlos.

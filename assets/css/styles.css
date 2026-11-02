@@ -342,17 +342,6 @@ input {
 	color: var(--color-texto-suave);
 }
 
-/* Igual que .phs-demo-label del plugin: deja claro que el contenido no es real. */
-.demo-tag {
-	display: inline-block;
-	width: fit-content;
-	padding: 4px 10px;
-	border: 1px dashed var(--color-borde-fuerte);
-	border-radius: 6px;
-	font-size: 13px;
-	color: var(--color-texto-suave);
-}
-
 /* Cabecera ---------------------------------------------------------------- */
 
 .site-header {
@@ -1753,10 +1742,6 @@ input {
 	justify-content: space-between;
 	gap: 24px;
 	margin-bottom: clamp(32px, 4vw, 48px);
-}
-
-.quotes__head .demo-tag {
-	margin-top: 12px;
 }
 
 .quotes__nav {
