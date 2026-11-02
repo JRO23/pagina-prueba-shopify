@@ -303,11 +303,13 @@
 			var sin = prod && prod.getAttribute('data-sin');
 			techField.hidden = !!prod && prod.hasAttribute('data-sin-tecnica');
 			techInputs.forEach(function (input) {
-				var quitada = !!sin && input.value === sin;
-				input.closest('.chip').hidden = quitada;
-				input.disabled = quitada || (!!solo && input.value !== '' && input.value !== solo);
-				if (input.disabled && input.checked) { techInputs[0].checked = true; }
+				input.disabled = (!!solo && input.value !== solo) || (!!sin && input.value === sin);
 			});
+			/* Si la técnica elegida ya no aplica, pasa a la única posible o a "Que me asesoren". */
+			var elegida = $('input[name="tecnica"]:checked', form);
+			if (elegida && elegida.disabled) {
+				(solo ? $('input[name="tecnica"][value="' + solo + '"]', form) : techInputs[0]).checked = true;
+			}
 		}
 
 		function buildMessage() {

@@ -1087,10 +1087,6 @@ input {
 	cursor: pointer;
 }
 
-.chip[hidden] {
-	display: none;
-}
-
 .chip input {
 	position: absolute;
 	inset: 0;
