@@ -2108,12 +2108,15 @@ input {
 	grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
 	gap: clamp(32px, 5vw, 72px);
 	align-items: center;
-	margin-top: clamp(64px, 8vw, 112px);
+	margin-top: clamp(26px, 3.2vw, 45px);
 }
 
+/* El lienzo deja aire alrededor del país; los márgenes negativos lo absorben. */
 .ship__map {
 	position: relative;
 	aspect-ratio: 1 / 1.1;
+	margin-block: -11% -14.5%;
+	pointer-events: none;
 }
 
 .ship__map canvas {
@@ -2519,6 +2522,10 @@ html:not(.js) .ship__map,
 	.ship,
 	.steps {
 		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.ship__map {
+		margin-bottom: 0;
 	}
 
 	.prices {
