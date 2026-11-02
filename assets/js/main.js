@@ -121,32 +121,47 @@
 		var timer = null;
 		var heroVisible = true;
 
+		// El video de una escena solo corre mientras esa escena se ve.
+		function playVideo(slide) {
+			var video = $('video', slide);
+			if (video) { video.play().catch(function () {}); }
+		}
+
+		function pauseVideo(slide) {
+			var video = $('video', slide);
+			if (video) { video.pause(); }
+		}
+
 		function showSlide(n) {
 			var prev = current;
 			slides[prev].classList.remove('is-active');
 			words[prev].classList.remove('is-active');
 			words[prev].classList.add('is-leaving');
 			setTimeout(function () { words[prev].classList.remove('is-leaving'); }, 650);
+			setTimeout(function () { pauseVideo(slides[prev]); }, 1200);
 			current = n;
 			slides[n].classList.add('is-active');
 			words[n].classList.add('is-active');
+			playVideo(slides[n]);
 		}
 
 		function stopHero() {
 			clearInterval(timer);
 			timer = null;
+			pauseVideo(slides[current]);
 		}
 
 		function startHero() {
 			if (timer || paused || reduce.matches || !heroVisible || document.hidden) { return; }
 			timer = setInterval(function () { showSlide((current + 1) % slides.length); }, 3200);
+			playVideo(slides[current]);
 		}
 
 		// Las demás escenas se cargan cuando la página ya terminó.
 		function loadSlides() {
-			$$('img[data-src]', hero).forEach(function (img) {
-				img.src = img.getAttribute('data-src');
-				img.removeAttribute('data-src');
+			$$('[data-src]', hero).forEach(function (el) {
+				el.src = el.getAttribute('data-src');
+				el.removeAttribute('data-src');
 			});
 			startHero();
 		}
@@ -157,12 +172,15 @@
 			window.addEventListener('load', loadSlides);
 		}
 
-		if ('IntersectionObserver' in window) {
-			new IntersectionObserver(function (entries) {
-				heroVisible = entries[0].isIntersecting;
-				if (heroVisible) { startHero(); } else { stopHero(); }
-			}, { threshold: 0.2 }).observe(hero);
+		// El hero es sticky y nunca sale de la pantalla: cuenta como visible hasta que la hoja lo tapa.
+		function checkHero() {
+			var visible = window.scrollY < hero.offsetHeight * 0.8;
+			if (visible === heroVisible) { return; }
+			heroVisible = visible;
+			if (heroVisible) { startHero(); } else { stopHero(); }
 		}
+		window.addEventListener('scroll', checkHero, { passive: true });
+		checkHero();
 
 		document.addEventListener('visibilitychange', function () {
 			if (document.hidden) { stopHero(); } else { startHero(); }

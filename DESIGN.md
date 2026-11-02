@@ -100,6 +100,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - Sello de fabricante: tiene fondo blanco, así que va como calcomanía con radio y sombra.
 - Íconos: un solo set SVG en línea, trazo 1.8, extremos redondeados. Sin emojis.
 - Videos del taller: reales, sin controles ni sonido y en bucle. Se reproducen solos mientras se ven, con `data-autoplay`, y llevan `poster` en `assets/img/escenas`.
+- Video del hero (`bordado.mp4`, vertical 9:16): no lleva `data-autoplay`, `main.js` lo reproduce solo mientras se ve su escena. En pantallas horizontales va completo a la derecha, con su póster desenfocado llenando el resto para que el texto quede sobre azul. En pantallas verticales llena el hero, y en celular sube para que el logo bordado quede por encima del titular.
 
 ## Mapa 3D de envíos
 
@@ -116,7 +117,7 @@ Fuentes: contorno de [Natural Earth](https://www.naturalearthdata.com/) (dominio
 
 ## Movimiento
 
-- Rotación del titular cada 3,2s con fundido de la imagen de fondo.
+- Rotación del titular cada 3,2s con fundido de la imagen o el video de fondo. Se detiene cuando la primera hoja tapa el hero.
 - Texto declarativo que se ilumina con el scroll: la oración activa se resalta como con marcador, con un color de la pirámide del logo (verde, amarillo, naranja y rojo, en ese orden), y al pasar conserva su color como texto.
 - Carruseles continuos que se pausan con el puntero o el foco.
 - Entradas al hacer scroll: 24px de desplazamiento y 0,6s, una sola vez.
