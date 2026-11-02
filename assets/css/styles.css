@@ -240,6 +240,13 @@ input {
 	line-height: 1.5;
 }
 
+.subrayado {
+	text-decoration: underline;
+	text-decoration-color: var(--color-acento);
+	text-decoration-thickness: 0.08em;
+	text-underline-offset: 0.14em;
+}
+
 .center {
 	text-align: center;
 }

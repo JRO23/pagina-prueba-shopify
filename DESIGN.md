@@ -83,6 +83,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - **Botón discreto:** texto con subrayado.
 - **Foco:** contorno de 2px del color del texto con 2px de separación, en todos los elementos interactivos.
 - **Enlaces:** subrayados dentro del texto.
+- **Subrayado de titular:** `.subrayado`, línea en `--color-acento` bajo las palabras que se quieren resaltar. No indica enlace y el punto final queda por fuera.
 - **Navegación:** transparente sobre el hero, sólida en azul noche al hacer scroll y en las páginas internas, con la franja de marca debajo. Menús por clic, teclado y hover. En móvil, menú a pantalla completa.
 - **Chips de selección:** píldora con borde; la elegida va en `--color-primario` con texto blanco.
 - **Campos:** fondo blanco, borde `--color-borde-fuerte`, radio 12px, etiqueta siempre visible.
