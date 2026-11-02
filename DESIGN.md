@@ -121,6 +121,7 @@ Fuentes: contorno de [Natural Earth](https://www.naturalearthdata.com/) (dominio
 
 - Rotación del titular cada 3,2s con fundido de la imagen o el video de fondo. Se detiene cuando la primera hoja tapa el hero.
 - Texto declarativo que se ilumina con el scroll: la oración activa se resalta como con marcador, con un color de la pirámide del logo (verde, amarillo, naranja y rojo, en ese orden), y al pasar conserva su color como texto.
+- Subrayado de titular: se dibuja de izquierda a derecha ligado al scroll, mientras el titular sube del 85% al 40% de la altura de la pantalla, y se recoge al volver hacia arriba.
 - Carruseles continuos que se pausan con el puntero o el foco.
 - Entradas al hacer scroll: 24px de desplazamiento y 0,6s, una sola vez.
 - Parallax en los videos del fabricante: cada uno se mueve 24px en sentido contrario al otro, ligado al scroll.

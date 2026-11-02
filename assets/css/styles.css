@@ -240,11 +240,10 @@ input {
 	line-height: 1.5;
 }
 
+/* main.js lleva --avance de 0 a 1 con el scroll. Sin él, la línea queda completa. */
 .subrayado {
-	text-decoration: underline;
-	text-decoration-color: var(--color-acento);
-	text-decoration-thickness: 0.08em;
-	text-underline-offset: 0.14em;
+	--avance: 1;
+	background: linear-gradient(var(--color-acento), var(--color-acento)) left bottom / calc(var(--avance) * 100%) 0.08em no-repeat;
 }
 
 .center {

@@ -225,6 +225,30 @@
 		paintStatement();
 	}
 
+	/* Subrayado que se completa con el scroll ------------------------------ */
+	var underlines = $$('.subrayado');
+
+	if (underlines.length && !reduce.matches) {
+		var underlineTicking = false;
+
+		function paintUnderlines() {
+			underlineTicking = false;
+			var vh = window.innerHeight;
+			underlines.forEach(function (el) {
+				var p = (vh * 0.85 - el.getBoundingClientRect().top) / (vh * 0.45);
+				el.style.setProperty('--avance', Math.min(1, Math.max(0, p)));
+			});
+		}
+
+		window.addEventListener('scroll', function () {
+			if (!underlineTicking) {
+				underlineTicking = true;
+				requestAnimationFrame(paintUnderlines);
+			}
+		}, { passive: true });
+		paintUnderlines();
+	}
+
 	/* Carruseles continuos: la copia hace que el bucle no tenga saltos ------ */
 	$$('[data-marquee] .marquee__track').forEach(function (track) {
 		var copy = track.firstElementChild.cloneNode(true);
