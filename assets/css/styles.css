@@ -2085,11 +2085,54 @@ input {
 	margin-top: clamp(64px, 8vw, 112px);
 }
 
+.ship__map {
+	position: relative;
+	aspect-ratio: 1 / 1.1;
+}
+
 .ship__map canvas {
 	display: block;
 	width: 100%;
-	height: auto;
-	aspect-ratio: 1 / 1.1;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.ship__map.is-ready canvas {
+	opacity: 1;
+}
+
+/* Sin WebGL2 o sin JavaScript queda una foto del mapa. */
+html:not(.js) .ship__map,
+.ship__map.is-respaldo {
+	background: url('../mapa/colombia-3d.webp') center / contain no-repeat;
+}
+
+.ship__label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2px 8px;
+	border-radius: 999px;
+	background: rgba(11, 19, 38, 0.72);
+	color: var(--color-blanco);
+	font-size: 13px;
+	font-weight: 500;
+	white-space: nowrap;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.6s ease;
+}
+
+.ship__label--origen {
+	background: var(--color-detalle);
+	color: var(--color-tinta);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.ship__map.is-listo .ship__label {
+	opacity: 1;
 }
 
 .ship__text p {
@@ -2541,6 +2584,15 @@ input {
 @media (max-width: 520px) {
 	.site-header__actions {
 		gap: 8px;
+	}
+
+	.ship__label {
+		padding: 1px 6px;
+		font-size: 12px;
+	}
+
+	.ship__label--origen {
+		font-size: 13px;
 	}
 
 	.logo img {

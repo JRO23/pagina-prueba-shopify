@@ -99,6 +99,19 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - Íconos: un solo set SVG en línea, trazo 1.8, extremos redondeados. Sin emojis.
 - Videos del taller: reales, sin controles ni sonido y en bucle. Se reproducen solos mientras se ven, con `data-autoplay`, y llevan `poster` en `assets/img/escenas`.
 
+## Mapa 3D de envíos
+
+Solo Colombia, sin planeta. Costa, relieve y poblados son reales; las alturas van exageradas para que las cordilleras se lean.
+
+- `assets/js/mapa-3d.js` lo dibuja con WebGL2, sin librerías, y solo lo carga el Inicio. Baja sus datos cuando la sección se acerca y anima únicamente mientras se ve.
+- `assets/mapa/colombia-relieve.png`: el canal rojo guarda la altura y el verde la distancia al borde del país. No es una foto: no se optimiza ni se convierte a JPEG o WebP.
+- `assets/mapa/colombia-mapa.json`: contorno de las paredes y luces de los poblados.
+- `assets/mapa/colombia-3d.webp`: foto del mapa para navegadores sin WebGL2 o sin JavaScript. Si cambia el mapa, hay que volver a capturarla.
+- Tierra verde con grano y filo cian, luces ámbar y arcos blancos. Esos colores salen de la referencia, viven en los shaders y no son tokens. Los rótulos sí usan los tokens: Bogotá va sobre `--color-detalle`.
+- El encuadre se ajusta con `CAMARA`, la altura del relieve con `ALTO` y el grosor de la plancha con `GROSOR`, al inicio de `mapa-3d.js`.
+
+Fuentes: contorno de [Natural Earth](https://www.naturalearthdata.com/) (dominio público), elevación de Mapzen Terrain Tiles en AWS Open Data (SRTM, ETOPO1 y otras fuentes públicas), y poblados de [GeoNames](https://www.geonames.org/) (CC BY 4.0). Si el sitio se publica de verdad, hay que dejar el crédito de GeoNames visible.
+
 ## Movimiento
 
 - Rotación del titular cada 3,2s con fundido de la imagen de fondo.
@@ -106,6 +119,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - Carruseles continuos que se pausan con el puntero o el foco.
 - Entradas al hacer scroll: 24px de desplazamiento y 0,6s, una sola vez.
 - Parallax en los videos del fabricante: cada uno se mueve 24px en sentido contrario al otro, ligado al scroll.
+- Mapa 3D: al llegar a la sección, Colombia se levanta desde una vista plana en 2,8s, las luces se encienden desde Bogotá hacia afuera y salen los arcos. Después se mece despacio, sigue un poco al puntero y los cometas viajan por los arcos. El botón de pausa lo deja quieto.
 - Con `prefers-reduced-motion` todo queda quieto y el contenido se ve completo.
 
 ## Honestidad del contenido
