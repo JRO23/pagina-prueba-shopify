@@ -1348,14 +1348,14 @@ input {
 /* Órbita: el logo al centro y los canales girando alrededor. Las medidas van en
    cqmin (lado corto de la tarjeta) para que todo quepa, angosta o ancha. */
 .orbit {
-	--item: clamp(40px, 12cqmin, 60px);
+	--tile: clamp(40px, 12cqmin, 60px);
+	--item: var(--tile);
 	container-type: size;
 	background:
 		radial-gradient(circle at 50% 50%, rgba(240, 122, 26, 0.24), transparent 42%),
 		var(--color-seccion);
 }
 
-.orbit::before,
 .orbit::after,
 .orbit__ring {
 	content: "";
@@ -1367,10 +1367,6 @@ input {
 	border: 1px solid rgba(20, 33, 61, 0.13);
 	border-radius: 50%;
 	translate: -50% -50%;
-}
-
-.orbit::before {
-	--r: 57cqmin;
 }
 
 .orbit::after {
@@ -1394,6 +1390,14 @@ input {
 	--t: 48s;
 	--sentido: reverse;
 	--contra: normal;
+}
+
+/* Anillo exterior: solo cuadrados difuminados, que asoman por los bordes. */
+.orbit__ring--far {
+	--r: 57cqmin;
+	--t: 70s;
+	--sentido: normal;
+	--contra: reverse;
 }
 
 .orbit__item {
@@ -1427,6 +1431,17 @@ input {
 .orbit__item--logo img {
 	width: 62%;
 	height: auto;
+}
+
+/* Cuadrados vacíos y borrosos que dan profundidad a la órbita. */
+.orbit__item--ghost {
+	--item: calc(var(--tile) * var(--s));
+}
+
+.orbit__item--ghost i {
+	box-shadow: none;
+	opacity: 0.8;
+	filter: blur(calc(var(--item) / 14));
 }
 
 .orbit__core {
