@@ -300,10 +300,10 @@
 		function syncTecnicas() {
 			var prod = $('input[name="producto"]:checked', form);
 			var solo = prod && prod.getAttribute('data-solo');
-			var sin = prod && prod.getAttribute('data-sin');
+			var sin = prod && prod.hasAttribute('data-sin') ? prod.getAttribute('data-sin').split(',') : [];
 			techField.hidden = !!prod && prod.hasAttribute('data-sin-tecnica');
 			techInputs.forEach(function (input) {
-				input.disabled = (!!solo && input.value !== solo) || (!!sin && input.value === sin);
+				input.disabled = (!!solo && input.value !== solo) || sin.indexOf(input.value) > -1;
 			});
 			/* Si la técnica elegida ya no aplica, pasa a la única posible o a "Que me asesoren". */
 			var elegida = $('input[name="tecnica"]:checked', form);
