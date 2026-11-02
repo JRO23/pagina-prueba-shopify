@@ -631,32 +631,15 @@ input {
 	}
 }
 
-/* Video vertical: va completo a la derecha y su propio cuadro, desenfocado, llena el resto. */
-.hero__slide--video img {
-	object-position: 50% 100%;
-	filter: blur(40px);
-}
-
+/* Video vertical: llena el hero, con el encuadre en la aguja y el logo bordado. */
 .hero__video {
 	position: absolute;
 	top: 0;
-	right: 0;
-	width: auto;
+	left: 0;
+	width: 100%;
 	height: 100%;
-	aspect-ratio: 9 / 16;
-	-webkit-mask-image: linear-gradient(90deg, transparent, #000 30%);
-	mask-image: linear-gradient(90deg, transparent, #000 30%);
-}
-
-/* En pantallas verticales cabe sin márgenes: llena el hero. */
-@media (max-aspect-ratio: 1 / 1) {
-	.hero__video {
-		width: 100%;
-		aspect-ratio: auto;
-		object-fit: cover;
-		-webkit-mask-image: none;
-		mask-image: none;
-	}
+	object-fit: cover;
+	object-position: 50% 44%;
 }
 
 /* En celular el titular ocupa más alto: el video sube para que el logo bordado quede encima. */

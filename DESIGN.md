@@ -100,7 +100,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - Sello de fabricante: tiene fondo blanco, así que va como calcomanía con radio y sombra.
 - Íconos: un solo set SVG en línea, trazo 1.8, extremos redondeados. Sin emojis.
 - Videos del taller: reales, sin controles ni sonido y en bucle. Se reproducen solos mientras se ven, con `data-autoplay`, y llevan `poster` en `assets/img/escenas`.
-- Video del hero (`bordado.mp4`, vertical 9:16): no lleva `data-autoplay`, `main.js` lo reproduce solo mientras se ve su escena. En pantallas horizontales va completo a la derecha, con su póster desenfocado llenando el resto para que el texto quede sobre azul. En pantallas verticales llena el hero, y en celular sube para que el logo bordado quede por encima del titular.
+- Video del hero (`bordado.mp4`, vertical 9:16): no lleva `data-autoplay`, `main.js` lo reproduce solo mientras se ve su escena. Llena el hero a todo el ancho, encuadrado en la aguja y el logo con `object-position`. En celular sube para que el logo bordado quede por encima del titular. Mide 576px de ancho, así que en pantallas grandes se ve suave; si llega una versión de mayor resolución, conviene reemplazarlo.
 
 ## Mapa 3D de envíos
 
