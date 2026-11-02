@@ -300,9 +300,12 @@
 		function syncTecnicas() {
 			var prod = $('input[name="producto"]:checked', form);
 			var solo = prod && prod.getAttribute('data-solo');
+			var sin = prod && prod.getAttribute('data-sin');
 			techField.hidden = !!prod && prod.hasAttribute('data-sin-tecnica');
 			techInputs.forEach(function (input) {
-				input.disabled = !!solo && input.value !== '' && input.value !== solo;
+				var quitada = !!sin && input.value === sin;
+				input.closest('.chip').hidden = quitada;
+				input.disabled = quitada || (!!solo && input.value !== '' && input.value !== solo);
 				if (input.disabled && input.checked) { techInputs[0].checked = true; }
 			});
 		}
