@@ -100,7 +100,8 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - Sello de fabricante: tiene fondo blanco, así que va como calcomanía con radio y sombra.
 - Íconos: un solo set SVG en línea, trazo 1.8, extremos redondeados. Sin emojis.
 - Videos del taller: reales, sin controles ni sonido y en bucle. Se reproducen solos mientras se ven, con `data-autoplay`, y llevan `poster` en `assets/img/escenas`.
-- Video del hero (`bordado.mp4`, vertical 9:16): no lleva `data-autoplay`, `main.js` lo reproduce solo mientras se ve su escena. Llena el hero a todo el ancho, encuadrado en la aguja y el logo con `object-position`. En celular sube para que el logo bordado quede por encima del titular. Mide 576px de ancho, así que en pantallas grandes se ve suave; si llega una versión de mayor resolución, conviene reemplazarlo.
+- Videos del hero (`gorra-bordada.mp4` y `bordado.mp4`, verticales 9:16): no llevan `data-autoplay`, `main.js` los reproduce solo mientras se ve su escena. Llenan el hero a todo el ancho, encuadrados en lo que se está bordando con `object-position`. En celular suben para que el bordado quede por encima del titular. Miden 576px de ancho, así que en pantallas grandes se ven suaves; si llegan versiones de mayor resolución, conviene reemplazarlos.
+- `gorra-bordada.mp4` dura 2,9s y la cámara se acerca, así que va sin `loop`: se reproduce una vez por escena y se queda en el último cuadro, sin el salto del bucle. No confundirlo con `bordado-1.mp4`, que es el video de la tarjeta "Fabricamos y elaboramos tu pedido".
 
 ## Mapa 3D de envíos
 

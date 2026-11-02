@@ -14,6 +14,7 @@
 <meta property="og:image" content="assets/img/escenas/mug-logo.jpg">
 <link rel="icon" href="assets/img/marca/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/escenas/gorra-bordada-poster.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -123,7 +124,7 @@
 	<!-- Hero: se queda fijo mientras la primera hoja sube por encima. -->
 	<section class="hero" aria-labelledby="hero-titulo" data-hero>
 		<div class="hero__media" aria-hidden="true">
-			<div class="hero__slide is-active"><img src="assets/img/escenas/bordadora.jpg" alt="" fetchpriority="high" width="1920" height="1047"></div>
+			<div class="hero__slide is-active"><video class="hero__video" data-src="assets/video/gorra-bordada.mp4" poster="assets/img/escenas/gorra-bordada-poster.jpg" style="object-position: 50% 45%" width="576" height="1024" muted playsinline preload="metadata"></video></div>
 			<div class="hero__slide"><img data-src="assets/img/escenas/mug-logo.jpg" alt="" width="1920" height="1197"></div>
 			<div class="hero__slide"><img data-src="assets/img/escenas/gorra-taller.jpg" alt="" style="object-position: 50% 30%" width="1600" height="1600"></div>
 			<div class="hero__slide"><video class="hero__video" data-src="assets/video/bordado.mp4" poster="assets/img/escenas/bordado-poster.jpg" width="576" height="1024" muted loop playsinline preload="metadata"></video></div>
@@ -133,11 +134,11 @@
 		</div>
 		<div class="hero__inner wrap">
 			<h1 class="hero__title" id="hero-titulo">
-				<span class="sr-only">Tu marca puede ir en busos, mugs, gorras, polos, camisetas, carnets y toda tu dotación</span>
+				<span class="sr-only">Tu marca puede ir en gorras, mugs, polos, camisetas, carnets y toda tu dotación</span>
 				<span aria-hidden="true">
 					Tu marca puede ir en
 					<span class="rotor">
-						<span class="rotor__word is-active">busos bordados</span>
+						<span class="rotor__word is-active">gorras bordadas</span>
 						<span class="rotor__word">mugs sublimados</span>
 						<span class="rotor__word">gorras de malla</span>
 						<span class="rotor__word">polos bordadas</span>
