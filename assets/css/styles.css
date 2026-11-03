@@ -1203,7 +1203,7 @@ input {
 	height: 38px;
 	padding: 2px;
 	border-radius: 50%;
-	background: var(--color-tinta);
+	background: #ffffff;
 	object-fit: contain;
 }
 
