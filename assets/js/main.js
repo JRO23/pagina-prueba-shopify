@@ -263,7 +263,7 @@
 	});
 
 	/* Entradas al hacer scroll --------------------------------------------- */
-	var reveals = $$('.section__head, .quote, .flex-cards, .tech, .audience, .biz, .quotes, .prices, .maker, .ship, .steps');
+	var reveals = $$('.section__head, .quote, .flex-cards, .tech, .audience, .biz, .quotes, .pricesheet, .maker, .ship, .steps');
 
 	if ('IntersectionObserver' in window && !reduce.matches) {
 		var revealObserver = new IntersectionObserver(function (entries) {

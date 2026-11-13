@@ -89,6 +89,7 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - **Campos:** fondo blanco, borde `--color-borde-fuerte`, radio 12px, etiqueta siempre visible.
 - **Tarjetas:** imagen arriba y texto debajo, sin borde; las destacadas van en `--color-seccion`.
 - **Ficha de producto:** fondo `--color-blanco` con radio 24px, para las fotos sobre blanco.
+- **Hoja de precios (Suministros del Inicio):** una sola hoja `--color-blanco` con radio 24px y sin sombra, dividida en tres columnas como una lista de precios impresa. Cada columna lleva la foto real del producto, el título, la unidad ("precio por metro") y las filas. Cada fila muestra el precio al detal a la derecha y, debajo del nombre, el precio por cantidad o el dato técnico, copiados de `productos.html`. Cada fila abre WhatsApp con el pedido escrito. Precios en Inter con `tabular-nums`, nunca en letra monoespaciada. Sin adornos de ventana (los tres puntos de colores).
 - **Pie:** azul noche, con logo y cuatro columnas de enlaces, y una barra legal abajo.
 
 ## Imágenes e íconos

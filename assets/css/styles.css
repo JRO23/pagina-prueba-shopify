@@ -2000,89 +2000,147 @@ input {
 
 /* Suministros ------------------------------------------------------------- */
 
-.prices {
+/* Una sola hoja blanca dividida en tres columnas, como una lista de precios
+   impresa: sin sombra, sin letra monoespaciada y con la foto del producto. */
+.pricesheet {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 20px;
-	align-items: center;
-}
-
-.pricelist {
-	overflow: hidden;
-	border: 1px solid var(--color-borde);
-	border-radius: 16px;
+	border-radius: 24px;
 	background: var(--color-blanco);
-	font-family: var(--mono);
-	box-shadow: var(--shadow);
 }
 
-.pricelist--front {
-	transform: translateY(-16px);
-}
-
-.pricelist__bar {
+.pricesheet__group {
 	display: flex;
-	align-items: center;
-	gap: 6px;
-	padding: 12px 16px;
-	border-bottom: 1px solid var(--color-borde);
-	background: var(--color-seccion);
+	flex-direction: column;
+	padding: 24px 28px 28px;
 }
 
-.pricelist__bar i {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background: #C0392B;
+.pricesheet__group + .pricesheet__group {
+	border-left: 1px solid var(--color-borde);
 }
 
-.pricelist__bar i:nth-child(2) {
-	background: #27AE60;
+.pricesheet__photo {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	margin-bottom: 20px;
+	object-fit: contain;
 }
 
-.pricelist__bar i:nth-child(3) {
-	background: #F39C12;
+.pricesheet__head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--color-texto);
 }
 
-.pricelist__bar h3 {
-	margin-left: 8px;
-	font-family: var(--font);
+.pricesheet__head h3 {
+	font-size: 20px;
+	font-weight: 450;
+	line-height: 1.3;
+}
+
+.pricesheet__head span {
+	flex: none;
 	font-size: 14px;
-	font-weight: 600;
-}
-
-.pricelist__bar span {
-	margin-left: auto;
-	font-size: 13px;
 	color: var(--color-texto-suave);
 }
 
-.pricelist dl {
-	padding: 6px 16px;
-}
-
-.pricelist dl div {
+.pricesheet__list a {
 	display: flex;
+	align-items: baseline;
 	justify-content: space-between;
 	gap: 16px;
-	padding-block: 10px;
-	border-bottom: 1px dashed var(--color-borde);
-	font-size: 14.5px;
+	margin-inline: -8px;
+	padding: 12px 8px;
+	border-bottom: 1px solid var(--color-borde);
+	color: var(--color-texto);
+	text-decoration: none;
+	transition: background-color 0.2s ease;
 }
 
-.pricelist dt {
-	color: var(--color-texto-suave);
+.pricesheet__list a:hover {
+	background: var(--tinte);
 }
 
-.pricelist dd {
-	font-weight: 600;
-	color: var(--destaque);
+.pricesheet__name {
+	font-size: 15px;
+	line-height: 1.35;
 }
 
-.pricelist__foot {
-	padding: 4px 16px 14px;
+.pricesheet__name small {
+	display: block;
+	margin-top: 2px;
 	font-size: 13px;
 	color: var(--color-texto-suave);
+	font-variant-numeric: tabular-nums;
+}
+
+.pricesheet__price {
+	flex: none;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--destaque);
+	font-variant-numeric: tabular-nums;
+}
+
+.pricesheet__foot {
+	margin-top: auto;
+	padding-top: 14px;
+	font-size: 14px;
+	color: var(--color-texto-suave);
+}
+
+.pricesheet__note {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.pricesheet__note .icon {
+	flex: none;
+	margin-top: 1px;
+	color: var(--color-exito);
+}
+
+/* Tablet: un grupo por fila, con la foto a la izquierda. */
+@media (max-width: 1024px) {
+	.pricesheet {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.pricesheet__group {
+		display: grid;
+		grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+		grid-template-rows: auto auto 1fr;
+		column-gap: 32px;
+		padding: 28px;
+	}
+
+	.pricesheet__group + .pricesheet__group {
+		border-top: 1px solid var(--color-borde);
+		border-left: 0;
+	}
+
+	.pricesheet__photo {
+		grid-row: 1 / span 3;
+		align-self: center;
+		margin-bottom: 0;
+	}
+}
+
+/* Celular: la foto arriba y la lista debajo. */
+@media (max-width: 600px) {
+	.pricesheet__group {
+		display: flex;
+		padding: 20px;
+	}
+
+	.pricesheet__photo {
+		margin-bottom: 16px;
+	}
 }
 
 /* Fabricante -------------------------------------------------------------- */
@@ -2626,15 +2684,6 @@ html:not(.js) .ship__map,
 
 	.ship__map {
 		margin-bottom: 0;
-	}
-
-	.prices {
-		grid-template-columns: minmax(0, 1fr);
-		gap: 16px;
-	}
-
-	.pricelist--front {
-		transform: none;
 	}
 
 	.steps__media {
