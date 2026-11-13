@@ -94,7 +94,9 @@ Escala base 4: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 
 ## Imágenes e íconos
 
-- Solo imágenes reales de Design Promo, copiadas a `assets/img` y optimizadas en JPEG.
+- Solo imágenes de Design Promo, copiadas a `assets/img` y optimizadas en JPEG.
+- Ejemplos de pedidos: muestran productos terminados de clientes inventados (Café La Montaña, Colegio San Martín, Constructora Andina, Cóndores F.C., Hotel Candelaria, Librería El Farol, Dulce Tentación, Congreso Andino), con foto, nombre y logo, para que el visitante vea cómo quedaría su pedido. Nunca plantillas con recuadros grises ni marcas reales. Los prompts están en `PROMPTS-IMAGENES.md`.
+- Slides del hero en 16:9 (`hero-*.jpg`): el producto va a la derecha y el lado izquierdo queda oscuro para el titular. En celular se encuadran con `object-position` para que el producto quede a la vista.
 - A pantalla completa: escenas de taller con velo azul noche para asegurar el contraste.
 - Producto sobre blanco: siempre dentro de una ficha `--color-blanco`, nunca suelto sobre el fondo crema.
 - No usar imágenes con personajes o marcas de terceros. Ya se descartaron o recortaron: apliques (Superman, Batman), mug con Cartman, busos con Bugs Bunny, botones (Coca-Cola, BMW, Burger King), portavasos (Angry Birds), llaveros (Duff, Starbucks), cintas (Facebook, L'Oréal) y gorras con KISS o The Beatles.
