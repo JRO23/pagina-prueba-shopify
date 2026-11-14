@@ -3326,9 +3326,3 @@ html:not(.js) .ship__map,
 		color: var(--luz);
 	}
 }
-
-.quotes__nota {
-	margin-top: 8px;
-	color: var(--color-texto-suave);
-	font-size: 0.9375rem;
-}
