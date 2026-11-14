@@ -124,7 +124,10 @@
 		// El video de una escena solo corre mientras esa escena se ve.
 		function playVideo(slide) {
 			var video = $('video', slide);
-			if (video) { video.play().catch(function () {}); }
+			if (!video) { return; }
+			// Los clips cortos (data-reinicia) arrancan desde el inicio cada vez que vuelve su escena.
+			if (video.hasAttribute('data-reinicia')) { video.currentTime = 0; }
+			video.play().catch(function () {});
 		}
 
 		function pauseVideo(slide) {

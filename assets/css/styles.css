@@ -644,6 +644,12 @@ input {
 		bottom: 0;
 		height: 125%;
 	}
+
+	/* Los videos horizontales conservan el encuadre de la foto. */
+	.hero__video--ancho {
+		top: 0;
+		height: 100%;
+	}
 }
 
 /* Velo: asegura el contraste del texto sobre escenas claras. */
